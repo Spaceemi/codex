@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int bs()
+
+
+
+
+
+
+int main(){
+    //leemos a que es el numero de numeros q tiene el v
+    //b lo tenemos pa meterselo al vector
+    //leemos m que sera el numero de instrucciones y leemos las instrucciones en m1 para meterla al v de char 
+    
+    int a,b,m;
+    char m1;
+    vector <int> v;
+vector <char>ins;
+    cin>>a;
+    for(int i=0; i<a; i++){
+        cin>>b;
+        v.push_back(b);
+    }
+     /*for(auto i:v){
+        cout<<i<<" ";
+    }*/
+    cin>>m;
+    for(int j=0; j<(m*2); j++){
+        cin>>m1;
+        ins.push_back(m1);
+        
+        
+    }
+    
+    for(auto i:ins){
+        if(i=='c'){
+            cout<<"si";
+        }
+    
+    }
+    
+    return 0; 
+    
+}
