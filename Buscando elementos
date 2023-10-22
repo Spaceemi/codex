@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    
+    int n,n2;
+    cin>>n;
+    vector <int> m;
+    for(int i=0; i<n; i++){
+        cin>>n2;
+        m.push_back(n2);
+        
+    }
+    sort(m.begin(),m.end());
+    for(int l:m){
+        cout<<l[1]-1<<" ";
+    }
+    
+
+    
+    
+    return 0;
+}
