@@ -1,0 +1,3 @@
+for (int k = nums.size() - 1; k >= 0; k--) {
+    // Tu código aquí
+}
