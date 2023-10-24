@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+vector <int>p;
+int bs(){
+    int l=0,h=p.back-p.front,mita;
+    while(l<h){
+     mita=l+(h-l)/2;
+     
+
+        
+    }
+}
+
+
+
+int main(){
+
+int a,b;
+cin>>a;
+for(int i=0; i<a; i++){
+    cin>>b;
+    p.push_back(b);
+}
+sort(p.begin(),p.end());
+int lugar=bs(p);
+cout<<lugar;
+    
+    
+    
+    
+ return 0;   
+}
