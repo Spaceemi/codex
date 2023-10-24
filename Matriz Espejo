@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+      int f,c;
+   cin>>f>>c;
+  float m[f][c];
+  
+   for(int i=0; i<f; i++){
+      for(int j=0; j<c; j++){
+          cin>> m[i][j];
+      }
+      
+  }
+  
+  
+   for(int i=0; i<f; i++){
+      for(int j=c-1; j>=0; j--){
+          cout<<m[i][j]<<" ";
+      }
+      cout<<"\n";
+  }
+   
+    
+
+    return 0;
+}
