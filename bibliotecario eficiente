@@ -2,29 +2,34 @@
 using namespace std;
 
 int main(){
-map<int, int>m;
+//map<string, string>m;
 
-int a,mi=10000,ma=0,k;
+//int a,mi=10000,ma=0;
+int a;
+string b1,c1;
 cin>>a;
+vector<string> b;
+     getline(cin,b1);
+vector <string > c;
  for(int i=0; i<a; i++){
-     cin>>k;
-     m[k]++;
-     if(mi>k){
-         mi=k;
-     }else if(k>ma){
-         ma=k;
+     getline(cin,b1);
+     b.push_back(b1);
+     getline(cin,c1);
+     c.push_back(c1);
+     
+     
+     
+ }
+ string n;
+ getline(cin,n);
+ for(int j=0; j<b.size(); j++){
+     if(b[j]==n){
+         cout<<c[j];
+         
      }
      
  }
- //buscando el numero que no esta, si fuera al revez es diferente de end != que ==
-for(int j=mi; j<=ma; j++){
-    if(m.find(j)==m.end()) cout<<j<<" ";
-}
-
-
-
-//for(auto i:v)cout<<i<<" ";
-
+ 
 
 
 
