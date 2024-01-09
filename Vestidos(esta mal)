@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    double v, p;
+    cin >> v >> p;
+
+    // vector de pares para leer su puntuación y precio de cada uno
+    vector<pair<double, double>> ves;
+
+    for (int i = 0; i < v; i++) {
+        double gus, pre;
+        cin >> gus >> pre;
+        ves.push_back({gus, pre});
+    }
+
+    // Ordenar el vector basándose en el gusto sin cambiar el orden original de los precios
+    sort(ves.begin(), ves.end(), greater<pair<double, double>>());
+
+    int mv = -1;
+    for (int i = 0; i < v; i++) {
+        if (ves[i].second <= p) {
+            mv = i + 1;
+            break;
+        }
+    }
+
+    cout << mv;
+    return 0;
+}
