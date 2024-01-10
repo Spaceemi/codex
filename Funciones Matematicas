@@ -1,0 +1,77 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+ll vabs(ll num){
+    return abs(num);
+}
+ll maxi( ll num, ll num2){
+    return max(num,num2);
+}
+ll mini(ll num,ll num2){
+    return min(num,num2);
+}
+double raiz(double num){
+    double resultado=sqrt(num);
+    double parteDecimal=resultado-floor(resultado);
+
+    if(parteDecimal!=0.0){
+        return round(resultado*100)/100;
+    } else{
+        cout<<fixed<<setprecision(2);
+        return resultado;
+    }
+}
+
+ll pote(ll pot, ll num){
+    return pow(pot,num);
+}
+
+
+int main(){
+    /*
+    1.- Valor Absoluto
+    2.- Máximo de dos números
+    3.- Mínimo de dos números
+    4.- Raíz Cuadrada
+    5.- Potencias
+    */
+    ll numerodeop;  
+    cin>>numerodeop;
+
+    for(int i=0; i<numerodeop; i++) {
+        ll idop;
+        cin>>idop;
+
+        if(idop==1){
+            ll num;
+            cin>>num;
+            cout<<vabs(num)<<endl;
+        }
+        else if(idop==2){
+            ll num,num2;
+            cin>>num>>num2;
+            cout<<maxi(num,num2)<<endl;
+        }else if(idop==3){
+              ll num,num2;
+            cin>>num>>num2;
+            cout<<mini(num,num2)<<endl;
+        }
+        else if(idop==4){
+            double num;
+            cin>>num;
+            raiz(num);
+           
+            cout<< raiz(num)<<endl;
+            
+        }
+        else if(idop==5){
+            ll pot,num;
+            cin>>pot>>num;
+            cout<<(long long)pote(pot,num)<<endl;
+        }
+        
+}
+
+    return 0;
+}
