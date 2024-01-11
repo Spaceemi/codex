@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    string input;
+    
+    // Leer la entrada
+
+    cin >> input;
+
+    // Extraer las tres partes de la expresión
+    string str1, str2, str3;
+    size_t pos = input.find('?');
+    str1 = input.substr(0, pos);
+    size_t pos2 = input.find(':', pos + 1);
+    str2 = input.substr(pos + 1, pos2 - pos - 1);
+    str3 = input.substr(pos2 + 1);
+
+    // Imprimir la forma expandida con un condicional if-else
+    cout << "if(" << str1 << ")" << endl;
+    cout << "    " << str2 << ";" << endl;
+    cout << "else" << endl;
+    cout << "    " << str3 << ";" << endl;
+
+    return 0;
+}
