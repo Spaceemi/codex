@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int x,n;
+    cin>>x>>n;
+
+    vector<pair<int,int>>dr; 
+
+    for (int i=0;i<n;i++) {
+        int df,bonus;
+        
+        cin>>df>>bonus;
+        dr.push_back({df, bonus});
+    }
+
+    sort(dr.begin(),dr.end());
+
+    for(auto dragon:dr){
+        if(x>dragon.first) {
+            x+=dragon.second;
+        } else{
+            cout<<"No\n";
+            return 0;
+        }
+    }    cout<<"Si\n";
+
+    return 0;
+}
