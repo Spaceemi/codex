@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Paso 1: Leer la fuerza inicial de Abraham (x) y la cantidad de dragones (n).
+    int x, n;
+    cin >> x >> n;
+
+    // Paso 2: Leer la información de cada dragón y almacenarla en el vector.
+    vector<pair<int, int>> dragons;  // vector de pares (fuerza, bonificación)
+
+    for (int i = 0; i < n; ++i) {
+        int dragon_strength, bonus;
+        cin >> dragon_strength >> bonus;
+        dragons.push_back({dragon_strength, bonus});
+    }
+
+    // Paso 3: Ordenar los dragones en orden ascendente de sus fuerzas.
+    sort(dragons.begin(), dragons.end());
+
+    // Paso 4: Verificar si Abraham puede derrotar cada dragón sin perder ninguno.
+    for (const auto& dragon : dragons) {
+        if (x > dragon.first) {
+            // Abraham derrota al dragón y obtiene la bonificación.
+            x += dragon.second;
+        } else {
+            // Abraham no puede derrotar al dragón.
+            cout << "No\n";
+            return 0;
+        }
+    }
+
+    // Si llegamos aquí, Abraham derrotó a todos los dragones sin perder ninguno.
+    cout << "Si\n";
+
+    return 0;
+}
