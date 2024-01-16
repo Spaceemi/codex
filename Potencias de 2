@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    
+    int n;
+    cin>>n;
+
+    // Calcular la potencia de 2 correspondiente al número ingresado
+    int e=log2(n);
+
+    cout << e ;
+
+    return 0;
+}
