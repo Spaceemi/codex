@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    
+    int a;
+    cin>>a;
+    vector<int>v;
+for(int i=0; i<a; i++){
+    
+    for(int j=0; j<a ;j++){
+        int b;
+        cin>>b;
+        v.push_back(b);
+        
+    }
+    
+}
+int sum;
+ for (int i = 0; i < v.size(); i++) {
+        sum += v[i];
+    }
+for(int i=0; i<a; i++){
+    cout<<endl;
+    for(int j=0; j<a; j++){
+        cout<<sum<<" ";
+    }
+}
+
+   
+
+    return 0;
+}
