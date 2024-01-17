@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+        int M, N;
+    cin >> M >> N;
+    int tablero[100][100];
+    
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            cin >> tablero[i][j];
+        }
+    }
+    int reyNegro, reyBlanco;
+    cin >> reyNegro >> reyBlanco;
+
+    int piezasNegras = 0, piezasBlancas = 0;
+    bool reyNegroEncontrado = false, reyBlancoEncontrado = false;
+
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            if (tablero[i][j] % 2 == 0) {
+                // Pieza negra par
+                piezasNegras++;
+                if (tablero[i][j] == reyNegro) {
+                    reyNegroEncontrado = true;
+                }
+            } else {
+                // Pieza blanca
+                piezasBlancas++;
+                if (tablero[i][j] == reyBlanco) {
+                    reyBlancoEncontrado = true;
+                }
+            }
+        }
+    }
+
+    // Salida
+    cout << piezasNegras << " " << piezasBlancas << endl;
+
+    if (!reyNegroEncontrado || !reyBlancoEncontrado) {
+        cout << "JAQUE MATE" << endl;
+    } else {
+        cout << "NO JAQUE" << endl;
+    }
+
+    return 0;
+}
