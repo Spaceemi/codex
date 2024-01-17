@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int calcularMCD(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int A, B;
+ cin>>A>>B;
+
+
+    int mcd = calcularMCD(A, B);
+    cout <<mcd;
+
+    return 0;
+}
