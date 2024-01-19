@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    
+    int n;
+    cin>>n;
+    
+
+    if(n>=0 && n<=9){
+        cout<<1;
+        return 0;
+}
+
+int cont=0;
+while(n!=0){
+    n=n/10;
+    cont++;
+    
+}
+cout<<cont;
+
+
+
+return 0;
+}
