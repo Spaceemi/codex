@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    
+    int numCarreteras;
+    cin>>numCarreteras;
+    
+    //usamos un conjunto para almacenar las conexiones de cada casa en este caso se sabe que no seran mas de 10 y van del 0 al 9
+    vector<set<int>>conexiones(10);
+    
+    //leer las conexiones de las carreteras
+    for(int i=0;i<numCarreteras;i++){
+        
+        int casa1,casa2;
+        cin>>casa1>>casa2;
+//casa 1 representa la casa de la que se conecta en este caso con la casa 2 
+        conexiones[casa1].insert(casa2);
+        conexiones[casa2].insert(casa1);
+    }
+
+    //casa por la que preguntamos sus conexiones
+    int casaPregunta;
+    cin>>casaPregunta;
+
+    for(int casa:conexiones[casaPregunta]){
+        cout<<casa<< " ";
+    }
+
+    return 0;
+}
