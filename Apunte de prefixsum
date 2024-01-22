@@ -1,0 +1,82 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main(){
+/*
+class Prefix {
+    private:
+        int a[1000001];
+        int y;
+        int x;
+        int k;
+        int n;
+        int m;
+
+    public:
+    void fetchNumber(int x) {
+        this->x=x;
+    }
+
+    void setPrefix(int y, int x) {
+        cout<<a[y]-a[x-1]<<endl;
+    }
+
+    void getNumbers() {
+        fetchNumber(x);
+        cin>>n>>m;
+        for(int i=1;i<=n;i++){
+            cin>>k;
+            a[i]=a[i-1]+k;
+        }
+        for(int i=1;i<=m;i++){
+            cin>>x>>y;
+            setPrefix(y,x);
+        }
+    }
+
+};
+
+int main() {
+    Prefix pr;
+    pr.getNumbers();
+
+    return 0;
+}
+*/
+
+//prefix sum no sirve para minimos ni maximos, sumas restas multiplicacion raiz (estos ultimos dos se desbordan rapido) pero si el
+//arreglo esta lleno de negativos pues automaticamente es cero,
+//la operacion XOR ivestigar 
+
+//prefix sum 2d
+ll N, Q;
+    cin >> N >> Q;
+    vector<string> v;
+    for (ll i = 0; i < N; i++) {
+        string s;
+        cin >> s;
+        v.push_back(s);
+    }
+    vector<vector<ll>> sum(N + 5, vector<ll>(N + 5, 0));
+    for (ll i = 1; i <= N; i++) {
+        for (ll j = 1; j <= N; j++) {
+            if (v[i - 1][j - 1] == '*') sum[i][j] = 1;
+            sum[i][j] += sum[i][j - 1];
+        }
+    }
+    for (ll i = 1; i <= N; i++) {
+        for (ll j = 1; j <= N; j++) {
+            sum[i][j] += sum[i - 1][j];
+        }
+    }
+    debug(sum)
+    while (Q--) {
+        ll i1, i2, j1, j2;
+        cin >> i1 >> j1 >> i2 >> j2;
+        ll ans = sum[i2][j2] - sum[i1 - 1][j2 ] - sum[i2][j1 - 1] + sum[i1 - 1][j1 - 1];
+        cout << ans << "\n";
+    }
+
+return 0;
+}
+
