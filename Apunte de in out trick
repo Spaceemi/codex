@@ -1,0 +1,40 @@
+#include <cstdio>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    // Desincronizar la entrada/salida estándar
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n;
+    cin >> n;
+
+    vector<int> arr(n);
+
+    for (int i = 0; i < n; ++i) {
+        cin >> arr[i];
+    }
+
+    // Calcular la suma de prefijos
+    for (int i = 1; i < n; ++i) {
+        arr[i] += arr[i - 1];
+    }
+
+    int q; // Número de consultas
+    cin >> q;
+
+    while (q--) {
+        int start, end;
+        cin >> start >> end;
+
+        // Calcular la suma del rango
+        int result = (start > 0) ? arr[end] - arr[start - 1] : arr[end];
+
+        // Imprimir el resultado
+        cout << result << "\n";
+    }
+
+    return 0;
+}
