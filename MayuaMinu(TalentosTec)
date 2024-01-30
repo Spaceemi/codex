@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+string conv(string a){
+    for (char& i : a) {
+        if (isupper(i)) {
+            i = tolower(i);
+        } else if (islower(i)) {
+            i = toupper(i);
+        }
+    }
+    return a;
+}
+
+int main() {
+    string a,b;
+
+    do {
+        getline(cin, a);
+
+        string resultado = conv(a);
+        cout << resultado << endl;
+
+        cout << "deseas continuar? (yes/no) ";
+        cin >> b;
+
+        cin.ignore();  //limpiar el buffer de entrada para evitar problemas en la siguiente iteración
+
+    } while (b == "yes" || b == "claro" || b == "si");
+
+    return 0;
+}
