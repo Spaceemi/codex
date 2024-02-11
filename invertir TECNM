@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+string func(string a){
+ 
+ reverse(a.begin(), a.end());
+ 
+ 
+ return a;
+ 
+    
+}
+
+
+
+int main(){
+    string a, ans;
+    do{
+        string r;
+getline(cin,a);
+r=func(a);
+        cout<<r;
+        cout<<"\nDeseas continuar? (yes/no)";
+        cin>>ans;
+         cin.ignore();
+        
+        
+    }while(ans=="yes" || ans=="si");
+    
+    
+    return 0;
+}
