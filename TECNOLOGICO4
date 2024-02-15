@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    
+    int n, m,r=0;
+    do{
+            cin>>n>>m;
+
+        r=n*m;
+        cout<<r<<endl;
+        
+    }while(r%2!=0);
+    
+    
+    
+    return 0;
+}
