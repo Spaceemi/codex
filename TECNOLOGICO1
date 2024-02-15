@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int func(int a, int b, int r=0){
+    if((a+b)%2==0){
+    r=a*b;
+    return r;
+    
+}
+else{
+ r=a-b;   
+ return r;
+}    
+}
+
+
+
+int main(){
+
+/*
+Hacer un programa que solicite indefinidamente dos números enteros, si la suma de los números
+es par muestre el resultado de su multiplicación, si la suma es impar
+muestre el resultado de la resta.
+Termine el programa cuando alguno de los números sea 0. Ejemplo:
+Dame 2 valores enteros: 10 5
+La resta es: 5
+Dame 2 valores enteros: 8 4
+La multiplicación es: 32
+Dame 2 valores enteros: 7 0
+La resta es: 5
+*/
+
+int a,b,r=0;
+do{
+cin>>a>>b;
+cout<<func(a,b,r);
+
+}while(r==0);
+    return 0;
+}
