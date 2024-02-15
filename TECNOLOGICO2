@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+string func(string a){
+
+for(char &i: a){
+    if(isupper(i)) i=tolower(i);
+    else if(islower(i)) i=toupper(i);
+    
+    
+    
+}
+
+return a; 
+
+
+
+
+}
+
+
+int main(){
+    string a,ans;
+    do{
+        
+getline(cin,a);
+cout<<func(a);
+cout<<"\nDeseas continuar?";
+cin>>ans; 
+cin.ignore();
+    }while(ans=="yes" || ans=="si");
+    
+    
+}
