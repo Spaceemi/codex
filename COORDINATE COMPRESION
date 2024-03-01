@@ -1,0 +1,116 @@
+/*La compresión de coordenadas es una tecnica
+utilizada para reducir el rango de valores posibles de un conjunto de datos.
+supongamos que tienes un conjunto de puntos con coordenadas x y, y deseas reducir
+el rango de valores. 
+
+pasos:
+a. guardar las coordenadas originales:
+
+    antes de realizar la compresión, guarda las coordenadas originales.(puede ser vector ll)
+
+b. ordenar y eliminar duplicados:
+
+    ordena las coordenadas y elimina duplicados. Esto facilita la identificación de los valores unicos.
+    (sort,  bubble sort a la bruta :D )
+
+c. crear un mapa (mapeaaaaa):
+
+    crea un mapa que asocie cada valor unico con un nuevo valor mas pequeño por ejemplo:
+    si tenemos array con valores de 10e19 
+    [ 100,000,000,000,000,000,0
+    23,456,789,012,345,678,9
+    99,999,999,999,999,999,9
+    12,345,678,901,234,567,8
+    87,654,321,098,765,432,1]
+añadiendolo en el map ambos 
+
+//PREGUNTAR SI SABEN MAP
+ for (int i = 0; i < vector.size(); i++) {
+        map[vector[i]] = i;
+    }
+
+
+
+
+d. aplicar la compresion:
+
+    recorre las coordenadas originales y reemplaza cada valor con su
+    correspondiente valor comprimido según el mapa.
+
+e. utilizar las coordenadas comprimidas:
+
+    trabaja con las coordenadas comprimidas en tu algoritmo.
+    aunque los valores son diferentes, el orden relativo se mantiene.*/
+    
+    
+#include<bits/stdc++.h> 
+#define ll long long
+using namespace std;
+
+// func para realizar la compresion de coordenadas
+void func(vector<ll>& cordenadas) {
+    // paso 1: Guardar las coordenadas originales
+    vector<ll> originalco = cordenadas;
+
+    // Paso 2: ordenar y eliminar duplicados
+    sort(cordenadas.begin(), cordenadas.end());
+    
+    cordenadas.erase(unique(cordenadas.begin(), cordenadas.end()), cordenadas.end());
+
+    // Paso 3: Crear un mapa de compresión
+    map<ll, ll> map;
+    for (int i = 0; i < cordenadas.size(); ++i) {
+        map[cordenadas[i]] = i;
+    }
+
+    // Paso 4: Aplicar la compresión
+    for (int i = 0; i < originalco.size(); ++i) {
+        originalco[i] = map[originalco[i]];
+    }
+
+    // Paso 5: Imprimir resultados
+    cout << "Coordenadas despues de eliminar valores repetidos: ";
+    for (int val : cordenadas) {
+        cout << val << " ";
+    }
+    cout << endl;
+
+    cout << "Coordenadas Comprimidas:                           ";
+    for (int val : originalco) {
+        cout << val << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    // Ejemplo de uso
+    
+    cout<<endl;
+    
+    vector<ll> cordenadas = {5,2,8,2,10,5,8};
+    vector<ll>sorteo={5,2,8,2,10,5,8};
+    cout<<"Coordenadas originales antes de ser ordenadas:     ";
+    
+    for(auto i:cordenadas){
+        cout<<i<<" ";
+    }
+    
+    cout<<endl;
+    sort(sorteo.begin(),sorteo.end());
+    cout<<"Coordenadas despues de ser ordenadas:              ";
+    for(auto i:sorteo){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    // Aplicar compresión de coordenadas
+    func(cordenadas);
+
+    return 0;
+}
+
+    
+    
+    
+    
+    
+    
