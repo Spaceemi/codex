@@ -1,34 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string func(string a){
+string func(string a)
+{
 
-for(char &i: a){
-    if(isupper(i)) i=tolower(i);
-    else if(islower(i)) i=toupper(i);
-    
-    
-    
+    for (int i = 0; i< a.size(); i++)
+    {
+        if (isupper(a[i]))
+            a[i] = tolower(a[i]);
+        else if (islower(a[i]))
+            a[i] = toupper(a[i]);
+    }
+
+    return a;
 }
 
-return a; 
+int main()
+{
+    string a, ans;
+    do
+    {
 
-
-
-
-}
-
-
-int main(){
-    string a,ans;
-    do{
-        
-getline(cin,a);
-cout<<func(a);
-cout<<"\nDeseas continuar?";
-cin>>ans; 
-cin.ignore();
-    }while(ans=="yes" || ans=="si");
-    
-    
+        getline(cin, a);
+        cout << func(a);
+        cout << "\nDeseas continuar?";
+        cin >> ans;
+        cin.ignore();
+    } while (ans == "yes" || ans == "si");
 }
