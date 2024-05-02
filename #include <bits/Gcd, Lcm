@@ -1,0 +1,22 @@
+// Función para calcular el LCM usando el GCD
+int lcm(int a, int b) {
+    // Calculamos el GCD de a y b usando la función gcd definida anteriormente
+    int gcd_result = gcd(a, b);
+
+    // Calculamos el LCM usando la relación: LCM(a, b) = (a * b) / GCD(a, b)
+    int lcm_result = (a * b) / gcd_result;
+
+    return lcm_result;
+}
+
+// Función para calcular el GCD usando el algoritmo de Euclides
+int gcd(int a, int b) {
+    // Iterativamente aplicamos el algoritmo de Euclides
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    // Cuando b llega a cero, a contiene el GCD
+    return a;
+}
