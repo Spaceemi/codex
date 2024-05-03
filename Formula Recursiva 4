@@ -2,26 +2,25 @@
 using namespace std;
 
 int cal(int x){
-    if (x <= 3) return 1;
+    if (x<=3) return 1;
     
     // almacenar los valores calculados
-    vector<int> dp(x + 1);
+    vector<int>dp(x + 1);
     
     //  base
     dp[1]=dp[2]=dp[3]=1;
     
     // calcular los valores iterativamente
-    for (int i = 4; i <= x; i++){
-        dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3];
+    for (int i=4;i<=x;i++){
+        dp[i] = dp[i-1] + dp[i - 2] + dp[i - 3];
     }
     
     return dp[x];
 }
 
 int main() {
-    int x;cin >> x;
-    
-    cout << cal(x);
+    int x;cin>>x;
+    cout<<cal(x);
     
     return 0;
 }
@@ -34,28 +33,24 @@ int main() {
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> memo; 
+
 
 int rec(int x){
-    if(x <= 3){
+    if(x<=3){
         return 1;
     }
+        
+    return rec(x-1)+rec(x-2)+rec(x-3);  
     
-  
-    int result = rec(x-1) + rec(x-2) + rec(x-3);
-    
-    //almacenamos para futuras referencias (memoria)
-    memo[x] = result;
-    
-    return result;
 }
-
-int main(){
-    int x;
-    cin >> x;
-    //nos aseguramos de inicializar el
-    //vector memo con -1  osea significa que no se ha calculado
-    memo.assign(x + 1, -1); cout<<rec(x); 
+  int main(){
       
-    return 0;
-}
+      int x;
+      cin>>x;
+      cout << rec(x); 
+      
+      
+      
+      
+      return 0;
+  }
